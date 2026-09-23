@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
@@ -11,11 +10,11 @@ int main (void) {
 
     while (1) {
         //Read input and print it back 
-        printf ("Enter programs to run.\n");
+        printf ("Enter programs to run.\n>");
         fflush(stdout);
 
         ssize_t nread = getline (&line, &len, stdin);
-        if (nread == 01) {
+        if (nread == -1) {
             break;
         }
 
